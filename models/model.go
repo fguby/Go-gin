@@ -34,3 +34,8 @@ func DbInit() {
 	db.DB().SetMaxIdleConns(10)
 	db.DB().SetMaxOpenConns(100)
 }
+
+//关闭数据库
+func CloseDB() {
+	defer db.Close()
+}
