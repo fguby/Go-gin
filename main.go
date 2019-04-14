@@ -6,24 +6,21 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gin-gonic/gin"
+	"Gin_demo/router"
 )
 
 func main() {
-	router := gin.Default()
-	router.POST("/form", func(c *gin.Context) {
-		type1 := c.DefaultPostForm("type", "alert") //可设置默认值
-		username := c.PostForm("username")
-		password := c.PostForm("password")
+	router := router.InitRouter()
 
-		//hobbys := c.PostFormMap("hobby")
-		//hobbys := c.QueryArray("hobby")
-		hobbys := c.PostFormArray("hobby")
+	fmt.Println("端口为:%s", util.ServerSetting.Port)
 
-		c.String(http.StatusOK, fmt.Sprintf("type is %s, username is %s, password is %s,hobby is %v", type1, username, password, hobbys))
+	s := &http.Server{
+		Addr:           fmt.Sprintf(":%d", util.ServerSetting.Port),
+		Handler:        router,
+		ReadTimeout:    util.ServerSetting.ReadTimeOut,
+		WriteTimeout:   util.ServerSetting.WriteTimeOut,
+		MaxHeaderBytes: 1 << 20,
+	}
 
-	})
-	//读取端口号
-	port := util.GetIniValue("server", "port")
-	router.Run(":" + port) // listen and serve on 0.0.0.0:8080
+	s.ListenAndServe()
 }
