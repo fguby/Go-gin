@@ -12,8 +12,6 @@ import (
 func main() {
 	router := router.InitRouter()
 
-	fmt.Println("端口为:%s", util.ServerSetting.Port)
-
 	s := &http.Server{
 		Addr:           fmt.Sprintf(":%d", util.ServerSetting.Port),
 		Handler:        router,
