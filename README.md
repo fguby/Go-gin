@@ -25,6 +25,7 @@ Port = 8090
 RunMode = debug
 ReadTimeOut = 60
 WriteTimeOut = 60
+JwtSecret = love
 
 [mysql]
 user = root
