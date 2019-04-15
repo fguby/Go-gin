@@ -17,6 +17,7 @@ type Server struct {
 	RunMode      string
 	ReadTimeOut  time.Duration
 	WriteTimeOut time.Duration
+	JwtSecret    string
 }
 
 var ServerSetting = &Server{}
