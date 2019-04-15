@@ -2,11 +2,10 @@
 ![Travis](https://img.shields.io/badge/-Beijing--研发-green.svg?logo=Docker&style=popout-square)
 
 <h2>Go语言项目</h2>
-<img src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png" width="100" hegiht="100" align="right" />
 
-使用beego框架开发的一个例子。
+使用beego框架开发的一个例子，使用GORM，INI，Swagger，Redis，Kafka，ElaticSearch等库。
 
-
+<img src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png" width="159" hegiht="159" align="center" />
 ## 如何安装
 
 ```
