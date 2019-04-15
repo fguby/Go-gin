@@ -1,0 +1,17 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		
+		{
+			"name": "Launch",
+			"type": "go",
+			"request": "launch",
+			"mode": "auto",
+			"program": "${fileDirname}",
+			"env": {},
+			"port": 8090,
+			"host": "127.0.0.1",
+			"args": []
+		}
+	]
+}
