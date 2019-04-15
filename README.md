@@ -1,8 +1,10 @@
 # Beego Example 
 ![Travis](https://img.shields.io/badge/-Beijing--研发-green.svg?logo=Docker&style=popout-square)
-<h2>Go语言项目</h2>
 
-使用beego框架开发的一个例子。<img src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png" width="100" hegiht="100" align="right" />
+<h2>Go语言项目</h2>
+<img src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png" width="100" hegiht="100" align="right" />
+
+使用beego框架开发的一个例子。
 
 
 ## 如何安装
