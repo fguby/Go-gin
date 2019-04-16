@@ -7,7 +7,11 @@ import (
 	v1 "Gin_demo/router/api/v1"
 	"net/http"
 
+	_ "Gin_demo/docs"
+
 	"github.com/gin-gonic/gin"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
 )
 
 func InitRouter() *gin.Engine {
@@ -31,11 +35,14 @@ func InitRouter() *gin.Engine {
 	r.LoadHTMLGlob("views/*")
 	//配置静态文件路径
 	r.Static("/static", "./static")
+	//r.Static("/swagger", "./docs")
 	//配置首页
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", gin.H{"title": "首页"})
 	})
 	//配置获取token的路径
 	r.GET("/auth", api.GetAuth)
+	//配置swagger
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	return r
 }

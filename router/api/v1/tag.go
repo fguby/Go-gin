@@ -16,6 +16,13 @@ var (
 	}
 )
 
+// @Summary 查询文章标签
+// @Produce  json
+// @Param id path int true "ID"
+// @Param name query string true "ID"
+// @Param state query int false "State"
+// @Success 200 {string} json "{"code":200,"data":{},"msg":"ok"}"
+// @Router /api/v1/tags/ [get]
 func GetTags(c *gin.Context) {
 	name := c.Query("name")
 	maps := make(map[string]interface{})
@@ -64,7 +71,13 @@ func GetTags(c *gin.Context) {
 	})
 }
 
-//添加一条标签
+// @Summary 新增文章标签
+// @Produce  json
+// @Param name query string true "Name"
+// @Param state query int false "State"
+// @Param created_by query int false "CreatedBy"
+// @Success 200 {string} json "{"code":200,"data":{},"msg":"ok"}"
+// @Router /api/v1/tags [post]
 func AddTag(c *gin.Context) {
 	//var data interface{}
 	var b models.Tag
@@ -75,7 +88,14 @@ func AddTag(c *gin.Context) {
 	c.JSON(cs.SUCCESS, cs.GetMsg(cs.SUCCESS))
 }
 
-//修改一条标签
+// @Summary 修改文章标签
+// @Produce  json
+// @Param id path int true "ID"
+// @Param name query string true "ID"
+// @Param state query int false "State"
+// @Param modified_by query string true "ModifiedBy"
+// @Success 200 {string} json "{"code":200,"data":{},"msg":"ok"}"
+// @Router /api/v1/tags/{id} [put]
 func EditTag(c *gin.Context) {
 	id := com.StrTo(c.Param("id")).MustInt()
 	var b models.Tag
@@ -89,7 +109,11 @@ func EditTag(c *gin.Context) {
 	c.JSON(cs.SUCCESS, "修改成功")
 }
 
-//删除一条标签
+// @Summary 删除文章标签
+// @Produce  json
+// @Param id path int true "ID"
+// @Success 200 {string} json "{"code":200,"data":{},"msg":"ok"}"
+// @Router /api/v1/tags/{id} [delete]
 func DeleteTag(c *gin.Context) {
 	id := com.StrTo(c.Param("id")).MustInt()
 	if err := models.DeleteTagById(id); err != nil {
