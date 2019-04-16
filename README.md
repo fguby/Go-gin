@@ -6,6 +6,7 @@
 使用Gin框架开发的一个例子，使用GORM，INI，Swagger，Redis，Kafka，ElaticSearch等库。
 
 <img src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png" width="159" hegiht="159" align="center" />
+
 ## 如何安装
 
 ```
@@ -33,3 +34,11 @@ password = 123456
 host = 127.0.0.1:3306
 db = bloc
 ```
+
+### swagger
+
+```
+http://localhost:port/swagger/index.html
+```
+
+![avatar](/static/this.jpg)
