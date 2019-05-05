@@ -16,7 +16,6 @@ import (
 
 func main() {
 	router := router.InitRouter()
-
 	port := fmt.Sprintf(":%d", util.ServerSetting.Port)
 
 	s := &http.Server{
